@@ -1,0 +1,9 @@
+define service {
+
+    use                     remote-service           ; Name of service template to use
+    host_name		    !PRICE-Demo-10.162.0.59, !PRICE-GIT-10.162.4.66, PRICE3-Demo-10.5.69.52
+    #hostgroup_name          web-servers
+    service_description     GitLab
+    servicegroups 	    GitLab
+    check_command           check_gitlab_nrpe!"$HOSTADDRESS$"
+}

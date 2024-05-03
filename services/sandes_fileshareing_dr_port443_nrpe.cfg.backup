@@ -1,0 +1,9 @@
+define service {
+
+    use                     remote-service           ; Name of service template to use
+    host_name		    !PRICE-Demo-10.162.0.59,PRICE3-App1-DB1-10.162.0.48
+    #hostgroup_name          smsgw.sms.gov.in_users
+    service_description     Sandes File sharing DR Server access
+    servicegroups 	    tcp_connections
+    check_command           check_tcp_nrpe!164.100.63.72!443
+}

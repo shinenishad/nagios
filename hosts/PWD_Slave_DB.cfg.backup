@@ -1,0 +1,14 @@
+define host {
+
+    use                     linux-server            ; Name of host template to use
+                                                    ; This host definition will inherit all variables that are defined
+                                                    ; in (or inherited by) the linux-server host template definition.
+    host_name               PWD-Slave-DB-10.162.0.50
+    alias                   PWD Slave DB Server
+    address                 10.162.0.50
+    _pg_port                5432
+    _pg_user                postgres
+    _pg_pass                postgres
+    check_command           check-ping-nrpe!"$HOSTADDRESS$"
+}
+

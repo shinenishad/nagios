@@ -1,0 +1,8 @@
+define service {
+    use                     local-service           ; Name of service template to use
+    host_name               PRICE-Demo-10.162.0.59
+    #hostgroup_name          web-servers
+    service_description     GitLab Replication
+    servicegroups 	    GitLab
+    check_command           check_gitlab_nrpe!"$HOSTADDRESS$"
+}
